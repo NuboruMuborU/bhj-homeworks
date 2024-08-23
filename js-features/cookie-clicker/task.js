@@ -20,3 +20,4 @@ cookieImgClick.addEventListener('click', function () {
   }
 });
 
+// 
