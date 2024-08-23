@@ -19,5 +19,3 @@ cookieImgClick.addEventListener('click', function () {
     cookieImgClick.width = 200;
   }
 });
-
-// 
