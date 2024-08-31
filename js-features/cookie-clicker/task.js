@@ -3,14 +3,13 @@ const cookieImgClick = document.getElementById("cookie");
 const clickFps = document.getElementById("clicker__fps"); 
 let counter = 0;
 
-let startDate = 0;
+let oldClickTime = Date.now();
 
-cookieImgClick.addEventListener('click', function () {
-  const reseervDate = (new Date().getMilliseconds() / 100).toFixed(0) / 10;
-  console.log(reseervDate);
-  console.log(startDate);
-  clickFps.textContent = '' + (Number((1 / (reseervDate - startDate)).toFixed(2)) + 4);
-  startDate = reseervDate;
+cookieImgClick.addEventListener('click', () => {
+  let clickTime = Date.now();
+  let result = ((clickTime - oldClickTime) / 60 ).toFixed(2);
+  clickFps.textContent = '' + result;
+  oldClickTime = clickTime;
   counter++;
   clickerCounter.textContent = '' + counter;
   if (cookieImgClick.width === 200) {
